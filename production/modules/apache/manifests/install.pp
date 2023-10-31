@@ -1,7 +1,5 @@
-class apache::install (
-  $pkg_name = $apache::params::install_name,
-) inherits apache::params {
-  package { "${pkg_name}":
+class apache::install {
+  package { "${apache::install_name}":
     ensure => present,
   }
 }
