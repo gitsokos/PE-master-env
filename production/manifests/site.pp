@@ -32,6 +32,9 @@
 
 node 'ip-172-31-12-81.eu-west-3.compute.internal' {   # Ubuntu
   include apache
+  class { 'apache::dissite':
+    vhost_file => '000-default.conf',
+  }
 }
 
 node 'ip-172-31-10-230.eu-west-3.compute.internal' {   # RedHat
