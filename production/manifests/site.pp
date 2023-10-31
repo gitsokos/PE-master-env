@@ -12,7 +12,7 @@
 ## Active Configurations ##
 
 # Disable filebucket by default for all File resources:
-File { backup => false }
+#File { backup => false }
 
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
@@ -24,8 +24,12 @@ File { backup => false }
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node default {
+#node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+#}
+
+node 'ip-172-31-10-230.eu-west-3.compute.internal' {   # RedHat
+  include apache
 }
