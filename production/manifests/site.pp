@@ -30,6 +30,10 @@
   #   class { 'my_class': }
 #}
 
+node 'ip-172-31-12-81.eu-west-3.compute.internal' {   # Ubuntu
+  include apache
+}
+
 node 'ip-172-31-10-230.eu-west-3.compute.internal' {   # RedHat
   include apache
 }
