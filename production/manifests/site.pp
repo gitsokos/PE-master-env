@@ -24,19 +24,31 @@
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-#node default {
+node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-#}
+}
 
-node 'ip-172-31-12-81.eu-west-3.compute.internal' {   # Ubuntu
+node 'ip-172-31-0-115.eu-west-3.compute.internal' {   # Ubuntu
   include apache
-  class { 'apache::dissite':
-    vhost_file => '000-default.conf',
+
+  apache::vhost { 'utah':
+    server_name   => 'uta.grtsokos.com',
+    document_root => 'utah',
+  }
+
+  class { 'apache::ensite':
+    vhost_file => 'utah.grtsokos.com.conf',
+    require    => Apache::Vhost['utah'],
   }
 }
 
-node 'ip-172-31-10-230.eu-west-3.compute.internal' {   # RedHat
+node 'ip-172-31-7-144.eu-west-3.compute.internal' {   # RedHat
   include apache
+
+  apache::vhost { 'ny':
+    server_name   => 'ny.grtsokos.com',
+    document_root => 'ny',
+  }
 }
