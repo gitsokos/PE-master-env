@@ -10,7 +10,7 @@ define apache::vhost (
 ) {
 
   file { "/var/www/${document_root}":
-    ensure => direcory,
+    ensure => directory,
   }
 
   $index_config_params = {
