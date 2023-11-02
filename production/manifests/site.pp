@@ -38,3 +38,7 @@ node 'ip-172-31-7-144.eu-west-3.compute.internal' {   # RedHat
 package { 'lynx':
   ensure => present,
 }
+
+package { 'ruby':
+  ensure => present,
+}
