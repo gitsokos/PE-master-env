@@ -4,7 +4,7 @@ node default {
   #   class { 'my_class': }
 }
 
-node 'ip-172-31-0-115.eu-west-3.compute.internal' {   # Ubuntu
+node 'ip-172-31-14-17.eu-west-3.compute.internal' {   # Ubuntu
   include apache
 
   apache::vhost { 'utah':
@@ -18,11 +18,11 @@ node 'ip-172-31-0-115.eu-west-3.compute.internal' {   # Ubuntu
   }
 
   host { 'utah.grtsokos.com':
-    ip => '172.31.0.115',
+    ip => '172.31.14.17',
   }
 }
 
-node 'ip-172-31-7-144.eu-west-3.compute.internal' {   # RedHat
+node 'ip-172-31-1-231.eu-west-3.compute.internal' {   # RedHat
   include apache
 
   apache::vhost { 'ny':
@@ -31,7 +31,7 @@ node 'ip-172-31-7-144.eu-west-3.compute.internal' {   # RedHat
   }
 
   host { 'ny.grtsokos.com':
-    ip => '172.31.7.144',
+    ip => '172.31.1.231',
   }
 }
 

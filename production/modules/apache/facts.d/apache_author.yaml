@@ -1,0 +1,9 @@
+---
+  apache_author:
+    organization: grtsokos
+    address: 52 Aritis, Greece
+    server: Apache
+    developer: George
+    os_family:
+      1: Debian
+      2: Red Hat
