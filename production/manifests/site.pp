@@ -51,3 +51,7 @@ package { 'ruby':
 #  hasrestart  => true,
 #  ensure      => running,
 #}
+
+file { '/tmp/test':
+  ensure => present,
+}
