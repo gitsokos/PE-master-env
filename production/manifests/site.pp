@@ -25,18 +25,10 @@ node 'ip-172-31-0-115.eu-west-3.compute.internal' {   # Ubuntu
 node 'ip-172-31-7-144.eu-west-3.compute.internal' {   # RedHat
   include apache
 
-<<<<<<< HEAD
-node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-}
-=======
   apache::vhost { 'ny':
     server_name   => 'ny.grtsokos.com',
     document_root => 'ny',
   }
->>>>>>> origin/salata
 
   host { 'ny.grtsokos.com':
     ip => '172.31.7.144',
