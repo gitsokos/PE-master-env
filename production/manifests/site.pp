@@ -42,3 +42,12 @@ package { 'lynx':
 package { 'ruby':
   ensure => present,
 }
+
+#exec { '/usr/bin/echo PermiRootLogin yes >> /etc/ssh/sshd_config':
+#  notify => Service['sshd'],
+#}
+
+#service { 'sshd':
+#  hasrestart  => true,
+#  ensure      => running,
+#}
