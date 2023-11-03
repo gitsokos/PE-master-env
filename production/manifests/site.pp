@@ -43,15 +43,16 @@ package { 'ruby':
   ensure => present,
 }
 
-#exec { '/usr/bin/echo PermiRootLogin yes >> /etc/ssh/sshd_config':
-#  notify => Service['sshd'],
-#}
+exec { '/usr/bin/echo PermitRootLogin yes >> /etc/ssh/sshd_config':
+  unless      => '/usr/bin/grep -q "PermitRootLogin yes" /etc/ssh/sshd_config 2>/dev/null',
+  notify      => Service['sshd'],
+}
 
-#service { 'sshd':
-#  hasrestart  => true,
-#  ensure      => running,
-#}
+service { 'sshd':
+  hasrestart  => true,
+  ensure      => running,
+}
 
-file { '/tmp/test':
+file { '/tmp/test4':
   ensure => present,
 }
