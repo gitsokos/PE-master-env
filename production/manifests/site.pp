@@ -4,6 +4,10 @@ node default {
   #   class { 'my_class': }
 }
 
+node /eu-west-3.compute.internal$/ {
+  include  cowsay
+}
+
 node 'ip-172-31-7-127.eu-west-3.compute.internal' {   # Ubuntu
   include apache
 
