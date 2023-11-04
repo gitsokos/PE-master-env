@@ -5,7 +5,16 @@ node default {
 }
 
 node /eu-west-3.compute.internal$/ {
+
+  include motd
+
   include  cowsay
+#  file { '/tmp/testfilemodule':
+#    source => 'puppet:///modules/cowsay/testfile',
+#  }
+#  file { '/tmp/testfilefile':
+#    source => '/tmp/test4',
+#  }
 }
 
 node 'ip-172-31-7-127.eu-west-3.compute.internal' {   # Ubuntu
