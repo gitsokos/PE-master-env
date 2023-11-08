@@ -1,20 +1,33 @@
 node default {
+  file { '/tmp/test-default':
+    ensure => present,
+  }
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
 }
 
-node /eu-west-3.compute.internal$/ {
+#node /eu-west-3.compute.internal$/ {
 
-  include motd
+#  include motd
 
-  include  cowsay
+#  include  cowsay
 #  file { '/tmp/testfilemodule':
 #    source => 'puppet:///modules/cowsay/testfile',
 #  }
 #  file { '/tmp/testfilefile':
 #    source => '/tmp/test4',
 #  }
+#}
+
+node "ip-172-31-13-0.eu-west-3.compute.internal" {   # Master
+  include motd
+
+  include  cowsay
+
+  file { '/tmp/test-master':
+    ensure => present,
+  }
 }
 
 node /^ip-172-31-13-10[0-9].eu-west-3.compute.internal$/ {   # Ubuntu
