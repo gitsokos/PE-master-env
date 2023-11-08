@@ -17,7 +17,17 @@ node /eu-west-3.compute.internal$/ {
 #  }
 }
 
-node 'ip-172-31-7-127.eu-west-3.compute.internal' {   # Ubuntu
+node /^ip-172-31-13-10[0-9].eu-west-3.compute.internal$/ {   # Ubuntu
+  include motd
+
+  include  cowsay
+
+  file { '/tmp/test-ubuntu':
+    ensure => present,
+  }
+}
+
+node nothing1 {
   include apache
 
   apache::vhost { 'utah':
@@ -39,7 +49,17 @@ node 'ip-172-31-7-127.eu-west-3.compute.internal' {   # Ubuntu
   }
 }
 
-node 'ip-172-31-29-154.eu-west-3.compute.internal' {   # RedHat
+node /^ip-172-31-13-15[0-9].eu-west-3.compute.internal$/ {   # RedHat
+  include motd
+
+  include  cowsay
+
+  file { '/tmp/test-redhat':
+    ensure => present,
+  }
+}
+
+node nothing2 {
   include apache
 
   apache::vhost { 'ny':
