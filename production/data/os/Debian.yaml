@@ -1,0 +1,6 @@
+# /etc/puppetlabs/code/environments/production/data/common.yaml
+---
+#profile::hiera_test::ssl: true
+profile::hiera_test::backups_enabled: true
+profile::hiera_test::param1: "Debian param1"
+profile::hiera_test::param2: "Debian param2"

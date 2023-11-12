@@ -19,3 +19,5 @@ service { 'sshd':
 file { '/tmp/test-common':
   ensure => present,
 }
+
+include profile::hiera_test

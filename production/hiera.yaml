@@ -8,8 +8,14 @@ defaults:
   # datadir: data
   # data_hash: yaml_data
 hierarchy:
-  - name: "Per-node data (yaml version)"
-    path: "nodes/%{::trusted.certname}.yaml"
   - name: "Other YAML hierarchy levels"
     paths:
       - "common.yaml"
+  - name: "Per-node data (yaml version)"
+#   path: "nodes/%{::trusted.certname}.yaml"
+    path: "nodes/%{trusted.certname}.yaml"      #
+  - name: "Per-OS defaults"                     # added for testing as of Getting started with Hiera at
+    path: "os/%{facts.os.family}.yaml"          # https://www.puppet.com/docs/puppet/8/hiera_quick#hiera_quick
+    #  - name: "Other YAML hierarchy levels"
+    #    paths:
+    #      - "common.yaml"
