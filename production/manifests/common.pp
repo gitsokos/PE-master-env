@@ -2,6 +2,10 @@ package { 'lynx':
   ensure => present,
 }
 
+package { 'jq':
+  ensure => present,
+}
+
 package { 'ruby':
   ensure => present,
 }
